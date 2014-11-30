@@ -3,7 +3,17 @@
 BUY IT WHILE YOU'RE STILL CAPABLE!
 
 = form_for purchase, url: deal_transactions_url(deal_id: deal_id) do |f|
+  = f.label :buyer_full_name, 'Full name'
+  = f.text_field :buyer_full_name
+  = f.label :buyer_email, 'Email'
+  = f.email_field :buyer_email
+  = f.label :buyer_address, 'Delivery address'
+  = f.text_field :buyer_address
+  = f.label :buyer_postcode, 'Postcode'
+  = f.text_field :buyer_postcode
+
   #dropin
+
   = f.submit "Pay $10"
 
 :javascript

@@ -38,7 +38,7 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-gem 'braintree-rails'
+gem 'braintree'
 gem 'haml-rails'
 gem 'pg'
 gem 'pry'

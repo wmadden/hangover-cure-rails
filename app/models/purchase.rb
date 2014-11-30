@@ -1,3 +1,5 @@
+require 'services/braintree_service'
+
 class Purchase < ActiveRecord::Base
   has_many :transactions
 
@@ -17,11 +19,16 @@ class Purchase < ActiveRecord::Base
 
   def commit(nonce)
     return false unless save
-    braintree_transaction = BraintreeService.pay(nonce, purchase)
-    local_transaction_record = Transaction.create!(
-      status: braintree_transaction.status,
-      identifier: braintree_transaction.identifier
-    )
-    local_transaction_record.succeeded?
+
+    braintree_response = BraintreeService.pay(nonce, self)
+
+    if braintree_response.transaction
+      transaction = Transaction.create!(
+        status: braintree_response.transaction.status,
+        identifier: braintree_response.transaction.id
+      )
+    end
+
+    braintree_response.success?
   end
 end

@@ -3,7 +3,15 @@ module PurchaseMethods
 
   included do
     def purchase_attrs
-      params.permit(:purchase)
+      # TODO: this guard sucks but I don't know how to do it better :(
+      return nil unless params[:purchase]
+      
+      params.require(:purchase).permit *%i(
+        buyer_full_name
+        buyer_email
+        buyer_address
+        buyer_postcode
+      )
     end
 
     def purchase

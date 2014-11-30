@@ -1,0 +1,28 @@
+.payment-form
+  %p To be delivered on Saturday 6th of December.
+
+  = form_for purchase, url: deal_transactions_url(deal_id: deal_id), html: { role: 'form' } do |f|
+    .form-group
+      = f.label :buyer_full_name, 'Full name'
+      = f.text_field :buyer_full_name, class: 'form-control'
+
+    .form-group
+      = f.label :buyer_email, 'Email'
+      = f.email_field :buyer_email, class: 'form-control'
+
+    .form-group
+      = f.label :buyer_address, 'Delivery address'
+      = f.text_field :buyer_address, class: 'form-control'
+
+    .form-group
+      = f.label :buyer_postcode, 'Postcode'
+      = f.text_field :buyer_postcode, class: 'form-control'
+
+    #dropin
+
+    = f.submit "Place Order", class: 'btn btn-default btn-block btn-lg'
+
+:javascript
+  braintree.setup('#{braintree_client_token}', 'dropin', {
+    container: 'dropin'
+  });

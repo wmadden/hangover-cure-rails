@@ -1,0 +1,67 @@
+// Place all the styles related to the deals controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@theme-primary-color: rgb(48, 13, 81);
+@theme-secondary-color: #FFDF00;
+
+@theme-text-over-primary: rgb(255, 255, 255);
+@theme-text-over-secondary: #300d51;
+
+.deals {
+
+}
+
+.deals__deal {
+  display: block;
+  text-align: center;
+}
+
+.deals__deal-title {
+  background: @theme-primary-color;
+  color: @theme-text-over-primary;
+  font-family: 'pt_sansbold';
+
+  font-size: 150%;
+  padding: 0.5em 0;
+}
+
+.deals__deal-image {
+  max-width: 100%;
+  display: block;
+  // border: 1px solid rgba(0,0,0,0.5);
+  border-top: none;
+  margin: 0 auto;
+}
+
+.deals__deal-banner {
+  z-index: 1;
+  position: absolute;
+  bottom: 1.0em;
+  text-align: center;
+  background: white;
+  left: 0;
+  right: 0;
+
+  background: @theme-secondary-color;
+  color: @theme-text-over-secondary;
+  font-family: 'pt_sansbold';
+  font-style: italic;
+  font-size: 120%;
+
+  padding: 0.3em 0;
+}
+
+.deals__deal--emphasized {
+  font-size: 120%;
+}
+
+.deal-detail {
+  font-family: 'pt_sansbold';
+}
+
+
+
+.deal-detail--image {
+  max-width: 100%;
+}

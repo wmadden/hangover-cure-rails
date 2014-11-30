@@ -1,12 +1,19 @@
-Deals:
+.info-section
+  %h1 Kater
 
-%ul
-  %li
-    = link_to deal_path('basic') do
-      Basic hangover
-  %li
-    = link_to deal_path('advanced') do
-      Advanced hangover
-  %li
-    = link_to deal_path('omg') do
-      OMG plz help
+  %p We deliver fresh, wholesome food and drink, on the morning after the party.
+
+.row
+  .col-md-4
+    = link_to deal_path('basic'), class: 'deals__deal' do
+      .deals__deal-title 3 items - €10
+      = image_tag 'tier1.jpg', class: 'deals__deal-image'
+  .col-md-4
+    = link_to deal_path('advanced'), class: 'deals__deal deals__deal--emphasized' do
+      .deals__deal-title 5 items - €12
+      = image_tag 'tier2.jpg', class: 'deals__deal-image'
+      .deals__deal-banner Most popular!
+  .col-md-4
+    = link_to deal_path('omg'), class: 'deals__deal' do
+      .deals__deal-title 7 items - €15
+      = image_tag 'tier3.jpg', class: 'deals__deal-image'

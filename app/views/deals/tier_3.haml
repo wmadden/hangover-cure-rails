@@ -1,22 +1,16 @@
-%h1 The OMG Plz Help Package
+.info-section
+  %h1 The Works
 
-BUY IT WHILE YOU'RE STILL CAPABLE!
+  %p For those beyond conventional help
 
-= form_for purchase, url: deal_transactions_url(deal_id: deal_id) do |f|
-  = f.label :buyer_full_name, 'Full name'
-  = f.text_field :buyer_full_name
-  = f.label :buyer_email, 'Email'
-  = f.email_field :buyer_email
-  = f.label :buyer_address, 'Delivery address'
-  = f.text_field :buyer_address
-  = f.label :buyer_postcode, 'Postcode'
-  = f.text_field :buyer_postcode
+.deal-detail
+  %p
+    = image_tag 'tier3.jpg', class: 'deal-detail--image'
 
-  #dropin
+  %p The Basics & Extras, plus:
 
-  = f.submit "Pay $10"
+  %ul
+    %li + Blueberry muesli
+    %li + Coconut water
 
-:javascript
-  braintree.setup('#{braintree_client_token}', 'dropin', {
-    container: 'dropin'
-  });
+= render 'payment_form'

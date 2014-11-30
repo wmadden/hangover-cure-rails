@@ -1,3 +1,16 @@
-%h1 The Advanced Hangover Cure
+.info-section
+  %h1 A Little Extra
 
-BUY IT NOW!
+  %p For those who need a little extra help
+
+.deal-detail
+  %p
+    = image_tag 'tier2.jpg', class: 'deal-detail--image'
+
+  %p The Basics, plus:
+
+  %ul
+    %li + Chicken soup
+    %li + Hot coffee
+
+= render 'payment_form'

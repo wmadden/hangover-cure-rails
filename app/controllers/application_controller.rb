@@ -4,8 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def braintree_client_token
-    Braintree::ClientToken.generate(
-      :customer_id => session.id # TODO: nfi if this is a good idea or not
-    )
+    Braintree::ClientToken.generate
   end
+  helper_method :braintree_client_token
 end

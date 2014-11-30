@@ -1,14 +1,13 @@
 Rails.application.routes.draw do
-  resources :transactions
-
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   root 'deals#index'
 
-  resources :deals, only: %i( index show )
-  resources :transactions, only: %i( create )
+  resources :deals, only: %i( index show ) do
+    resources :transactions, only: %i( create )
+  end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

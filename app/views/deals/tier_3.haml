@@ -1,0 +1,12 @@
+%h1 The OMG Plz Help Package
+
+BUY IT WHILE YOU'RE STILL CAPABLE!
+
+= form_for purchase, url: deal_transactions_url(deal_id: deal_id) do |f|
+  #dropin
+  = f.submit "Pay $10"
+
+:javascript
+  braintree.setup('#{braintree_client_token}', 'dropin', {
+    container: 'dropin'
+  });

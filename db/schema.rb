@@ -11,12 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141130122010) do
+ActiveRecord::Schema.define(version: 20141130130545) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "purchases", force: true do |t|
+    t.string  "buyer_email"
+    t.string  "buyer_full_name"
+    t.string  "buyer_address"
+    t.string  "buyer_postcode"
+    t.integer "price_in_full_units"
+    t.string  "item"
+    t.boolean "shipped",             default: false
+  end
+
   create_table "transactions", force: true do |t|
+    t.integer  "purchase_id"
+    t.string   "identifier"
+    t.string   "status"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

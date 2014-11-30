@@ -41,3 +41,4 @@ gem 'spring',        group: :development
 gem 'braintree-rails'
 gem 'haml-rails'
 gem 'pg'
+gem 'pry'
